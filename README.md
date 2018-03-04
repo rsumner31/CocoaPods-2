@@ -41,6 +41,32 @@ project goals influence and drive the design of CocoaPods:
   into your Xcode project as you see fit, with or without a workspace.
 - Solve everyday problems for Cocoa and Xcode developers.
 
+## Project Goals
+
+Ultimately, the goal of CocoaPods is to improve the engagement in, and
+discoverability of, third party open-source libraries. The following list
+includes the project goals which have influenced, and continues to
+drive the design of CocoaPods.
+
+- Being able to work in the system without creating extra work for
+  library authors. Making it possible to maintain a simple transparent
+  podspec outside of the library’s repository.
+- Not imposing any judgement of ‘correctness’ on how authors decide to
+  structure their library.
+- CocoaPods should not impose any specific requirements on source-code
+  management systems. (Currently supported are git, svn, mercurial, bazaar, and
+  various types of archives downloaded over HTTP.)
+- Provide the ability to work in a distributed way, but also provide
+  features only possible with a centralised solution to foster a community.
+- Being able to build tools on top of the system, including those typically
+  deployed to other operating systems, such as web-services.
+- Providing opinionated and automated integration, but making that completely
+  optional. It’s perfectly possible to manually integrate the CocoaPods
+  Xcode project as you see fit, with or without a workspace.
+- Not depending on Apple to fix issues with Xcode or otherwise force
+  authors to have to do a lot of Xcode work not related to their
+  library’s functionality.
+
 ## Sponsors
 
 Lovingly sponsored by a collection of companies, see the footer of [CocoaPods.org](https://cocoapods.org) for an up-to-date list. 
