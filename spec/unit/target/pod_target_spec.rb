@@ -158,6 +158,30 @@ module Pod
       end
     end
 
+    describe 'target version' do
+      it 'handles when the version is more than 3 numeric parts' do
+        version = Version.new('0.2.0.1')
+        @pod_target.root_spec.stubs(:version).returns(version)
+        @pod_target.version.should == '0.2.0'
+      end
+
+      it 'handles when the version is less than 3 numeric parts' do
+        version = Version.new('0.2')
+        @pod_target.root_spec.stubs(:version).returns(version)
+        @pod_target.version.should == '0.2.0'
+      end
+
+      it 'handles when the version is a pre-release' do
+        version = Version.new('1.0.0-beta.1')
+        @pod_target.root_spec.stubs(:version).returns(version)
+        @pod_target.version.should == '1.0.0'
+
+        version = Version.new('1.0-beta.5')
+        @pod_target.root_spec.stubs(:version).returns(version)
+        @pod_target.version.should == '1.0.0'
+      end
+    end
+
     describe 'Support files' do
       it 'returns the absolute path of the xcconfig file' do
         @pod_target.xcconfig_path('Release').to_s.should.include?(
