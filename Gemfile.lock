@@ -100,8 +100,10 @@ GIT
   specs:
     json (1.7.7)
 
-PATH
-  remote: .
+GIT
+  remote: https://github.com/CocoaPods/Xcodeproj.git
+  revision: de7a0fa64bc9a0d72278b4d384539ce748df6220
+  branch: master
   specs:
     cocoapods (1.4.0)
       activesupport (>= 4.0.2, < 5)
