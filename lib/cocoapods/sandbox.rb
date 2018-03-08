@@ -57,7 +57,7 @@ module Pod
     def initialize(root)
       FileUtils.mkdir_p(root)
       @root = Pathname.new(root).realpath
-      @public_headers = HeadersStore.new(self, 'Public', :public)
+      @public_headers = HeadersStore.new(self, 'Public')
       @predownloaded_pods = []
       @checkout_sources = {}
       @development_pods = {}

@@ -137,9 +137,8 @@ module Pod
             group_by(&:first).
             map do |vertex, spec_test_only_tuples|
               test_only = spec_test_only_tuples.all? { |tuple| tuple[1] }
-              payload = vertex.payload
-              spec_source = payload.respond_to?(:spec_source) && payload.spec_source
-              ResolverSpecification.new(payload, test_only, spec_source)
+              spec_source = vertex.payload.respond_to?(:spec_source) && vertex.payload.spec_source
+              ResolverSpecification.new(vertex.payload, test_only, spec_source)
             end.
             sort_by(&:name)
         end

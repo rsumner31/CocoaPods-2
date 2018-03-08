@@ -3,10 +3,10 @@ module Pod
   class Specification
     class Set
       class SpecWithSource < DelegateClass(Specification)
-        attr_reader :spec_source
+        attr_reader :spec_repo
         def initialize(spec, source)
           super(spec)
-          @spec_source = source
+          @spec_repo = source
         end
 
         undef is_a?
