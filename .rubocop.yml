@@ -1,0 +1,21 @@
+inherit_from:
+ - .rubocop_todo.yml
+ - .rubocop_cocoapods.yml
+
+#- CocoaPods ------------------------------------------------------------------
+
+AllCops:
+  Include:
+    - Dangerfile
+  Exclude:
+    - spec/fixtures/**/*.rb
+    - spec/fixtures/banana-lib/libPusher/Scripts/pusher
+
+Style/FileName:
+  Exclude:
+    - bin/*
+    - Rakefile
+
+Style/SignalException:
+  Exclude:
+    - Dangerfile
